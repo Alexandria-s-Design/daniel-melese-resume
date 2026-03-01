@@ -49,11 +49,45 @@
     .job-bullets li { font-size: 0.8rem; }
     .summary { font-size: 0.82rem; }
   }
-  @media print { .resume { box-shadow: none; } .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  /* TABS */
+  .tab-bar { max-width: 1200px; margin: 0 auto; display: flex; background: #1a1a2e; }
+  .tab-btn { padding: 0.7rem 1.8rem; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #7f8fa6; background: transparent; border: none; cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; }
+  .tab-btn:hover { color: #c8d6e5; }
+  .tab-btn.active { color: #fff; border-bottom-color: #fff; }
+  .tab-content { display: none; }
+  .tab-content.active { display: grid; }
+  .tab-content.active.cover-letter-tab { display: block; }
+
+  /* COVER LETTER */
+  .cover-letter { max-width: 1200px; margin: 0 auto; background: #fff; box-shadow: 0 0 60px rgba(0,0,0,0.08); display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+  .cl-sidebar { background: #1a1a2e; padding: 2.5rem 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 1rem; }
+  .cl-sidebar h2 { font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.25; }
+  .cl-sidebar .cl-tagline { font-size: 0.68rem; color: #c8d6e5; text-transform: uppercase; letter-spacing: 0.15em; }
+  .cl-sidebar .cl-contact { list-style: none; font-size: 0.75rem; color: #a4b0be; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem; }
+  .cl-sidebar .cl-contact a { color: #a4b0be; text-decoration: none; }
+  .cl-sidebar .cl-contact a:hover { color: #fff; }
+  .cl-body { padding: 3rem 3.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
+  .cl-date { font-size: 0.78rem; color: #7f8fa6; }
+  .cl-greeting { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; }
+  .cl-paragraph { font-size: 0.85rem; line-height: 1.7; color: #4a4a5a; }
+  .cl-closing { font-size: 0.85rem; color: #4a4a5a; margin-top: 0.5rem; }
+  .cl-signature { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; }
+
+  @media (max-width: 768px) {
+    .cover-letter { grid-template-columns: 1fr; }
+    .cl-sidebar { padding: 2rem 1.5rem; }
+    .cl-body { padding: 2rem 1.5rem; }
+    .tab-btn { padding: 0.6rem 1.2rem; font-size: 0.68rem; }
+  }
+  @media print { .resume, .cover-letter { box-shadow: none; } .sidebar, .cl-sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .tab-bar { display: none; } }
 </style>
 </head>
 <body>
-<div class="resume">
+<nav class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('resume')">Resume</button>
+  <button class="tab-btn" onclick="switchTab('cover-letter')">Cover Letter</button>
+</nav>
+<div class="resume tab-content active" id="tab-resume">
   <aside class="sidebar">
     <div class="name-block">
       <h1>Daniel<br>Melese-d'Hospital</h1>
@@ -85,5 +119,40 @@
     </div>
   </main>
 </div>
+
+<div class="cover-letter tab-content cover-letter-tab" id="tab-cover-letter">
+  <div class="cl-sidebar">
+    <div>
+      <h2>Daniel<br>Melese-d'Hospital</h2>
+      <p class="cl-tagline">Cover Letter</p>
+    </div>
+    <ul class="cl-contact">
+      <li>Carlsbad, CA 92009</li>
+      <li><a href="mailto:rokitmok5@gmail.com">rokitmok5@gmail.com</a></li>
+      <li><a href="tel:+17606889954">(760) 688-9954</a></li>
+      <li><a href="https://www.linkedin.com/in/daniel-melese-d-hospital-99b92b187/" target="_blank">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="cl-body">
+    <p class="cl-date">February 28, 2026</p>
+    <p class="cl-greeting">Dear Hiring Manager,</p>
+    <p class="cl-paragraph">I am writing to express my interest in the open position at your company. With over five years of customer-facing experience in high-volume hospitality environments and a Bachelor of Science in Applied Physics from California State University San Marcos, I bring a unique combination of analytical thinking, strong communication skills, and a genuine passion for delivering outstanding service.</p>
+    <p class="cl-paragraph">In my current role as a Beverage Sales &amp; Service Associate at Karl Strauss Brewing Company, I serve as the primary point of contact for guests, managing orders with speed and accuracy while building rapport that drives repeat business. Previously, as an Inventory &amp; Quality Control Associate at BJ's Restaurant &amp; Brewhouse, I maintained product quality standards and managed cellar inventory, developing the organizational and operational skills that translate directly to any office or sales environment.</p>
+    <p class="cl-paragraph">My physics background has given me strong data analysis capabilities, proficiency in tools like Microsoft Office, Google Workspace, and MATLAB, and an ability to approach problems methodically. I have also embraced AI tools such as ChatGPT and Claude to improve productivity and stay at the forefront of modern workflows. Combined with my track record of high customer satisfaction, including a 4.95/5.0 rating across 500+ deliveries with DoorDash, I am confident in my ability to contribute meaningfully to your team.</p>
+    <p class="cl-paragraph">I am eager to bring my energy, analytical mindset, and customer-first approach to a marketing, sales, or office-based role where I can grow professionally and add value from day one. I would welcome the opportunity to discuss how my experience aligns with your needs.</p>
+    <p class="cl-closing">Thank you for your time and consideration.</p>
+    <p class="cl-closing">Sincerely,</p>
+    <p class="cl-signature">Daniel Melese-d'Hospital</p>
+  </div>
+</div>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelector('[onclick="switchTab(\'' + tab + '\')"]').classList.add('active');
+}
+</script>
 </body>
 </html>
