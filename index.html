@@ -6,360 +6,83 @@
 <title>Daniel Melese-d'Hospital | Resume</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html, body {
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #f8f9fa;
-    color: #1a1a2e;
-  }
-
-  .resume {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 0 60px rgba(0,0,0,0.08);
-  }
-
-  /* LEFT SIDEBAR */
-  .sidebar {
-    background: #1a1a2e;
-    color: #e8e8e8;
-    padding: 2.5rem 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    overflow: hidden;
-  }
-
-  .sidebar h1 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.02em;
-    line-height: 1.3;
-  }
-
-  .sidebar .subtitle {
-    font-size: 0.72rem;
-    font-weight: 400;
-    color: #7f8fa6;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-top: -0.8rem;
-  }
-
-  .contact-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.78rem;
-  }
-
-  .contact-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .contact-list .icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    opacity: 0.6;
-  }
-
-  .contact-list a {
-    color: #a4b0be;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  html, body { min-height: 100vh; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f0f0f0; color: #1a1a2e; }
+  .resume { min-height: 100vh; display: grid; grid-template-columns: 300px 1fr; max-width: 1200px; margin: 0 auto; background: #fff; box-shadow: 0 0 60px rgba(0,0,0,0.08); }
+  .sidebar { background: #1a1a2e; color: #e8e8e8; padding: 2.5rem 1.8rem; display: flex; flex-direction: column; gap: 1.4rem; }
+  .name-block h1 { font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.25; margin-bottom: 0.5rem; }
+  .name-block .subtitle { font-size: 0.7rem; font-weight: 500; color: #c8d6e5; text-transform: uppercase; letter-spacing: 0.15em; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.5rem; }
+  .contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.8rem; }
+  .contact-list li { display: flex; align-items: center; gap: 0.6rem; }
+  .contact-list .icon { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.5; }
+  .contact-list span { color: #dcdde1; }
+  .contact-list a { color: #dcdde1; text-decoration: none; transition: color 0.2s; }
   .contact-list a:hover { color: #fff; }
-
-  .sidebar-section h3 {
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #7f8fa6;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.35rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .skill-group { margin-bottom: 0.7rem; }
-  .skill-group-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: #dcdde1;
-    margin-bottom: 0.25rem;
-  }
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-  }
-  .skill-tag {
-    font-size: 0.62rem;
-    background: rgba(255,255,255,0.07);
-    color: #a4b0be;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    white-space: nowrap;
-  }
-
-  .education-block .school {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #dcdde1;
-  }
-  .education-block .degree {
-    font-size: 0.72rem;
-    color: #a4b0be;
-    margin-top: 0.1rem;
-  }
-  .education-block .dates {
-    font-size: 0.65rem;
-    color: #636e72;
-    margin-top: 0.15rem;
-  }
-
-  /* RIGHT MAIN */
-  .main {
-    padding: 2.2rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    overflow: hidden;
-  }
-
-  .summary {
-    font-size: 0.82rem;
-    line-height: 1.55;
-    color: #4a4a5a;
-    border-left: 3px solid #1a1a2e;
-    padding-left: 1rem;
-  }
-
-  .section-title {
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #7f8fa6;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0.1rem;
-  }
-
-  .jobs { display: flex; flex-direction: column; gap: 0.9rem; }
-
+  .sidebar-section h3 { font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: #7f8fa6; margin-bottom: 0.55rem; padding-bottom: 0.3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .skill-group { margin-bottom: 0.65rem; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group-label { font-size: 0.68rem; font-weight: 600; color: #dcdde1; margin-bottom: 0.25rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .skill-tag { font-size: 0.62rem; background: rgba(255,255,255,0.08); color: #c8d6e5; padding: 0.2rem 0.55rem; border-radius: 3px; white-space: nowrap; }
+  .education-block .school { font-size: 0.82rem; font-weight: 600; color: #dcdde1; }
+  .education-block .degree { font-size: 0.75rem; color: #a4b0be; margin-top: 0.1rem; }
+  .education-block .dates { font-size: 0.68rem; color: #636e72; margin-top: 0.15rem; }
+  .main { padding: 2.5rem 2.8rem; display: flex; flex-direction: column; gap: 1.4rem; }
+  .summary { font-size: 0.85rem; line-height: 1.6; color: #4a4a5a; border-left: 3px solid #1a1a2e; padding-left: 1.1rem; }
+  .section-title { font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: #7f8fa6; padding-bottom: 0.35rem; border-bottom: 1px solid #e8e8e8; margin-bottom: 0.1rem; }
+  .jobs { display: flex; flex-direction: column; gap: 1rem; }
   .job { display: grid; grid-template-columns: 1fr auto; gap: 0.1rem 1rem; }
-  .job-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #1a1a2e;
-  }
-  .job-dates {
-    font-size: 0.72rem;
-    color: #7f8fa6;
-    text-align: right;
-    align-self: center;
-  }
-  .job-company {
-    font-size: 0.72rem;
-    color: #636e72;
-    grid-column: 1 / -1;
-  }
-  .job-bullets {
-    grid-column: 1 / -1;
-    list-style: none;
-    margin-top: 0.25rem;
-  }
-  .job-bullets li {
-    font-size: 0.76rem;
-    color: #4a4a5a;
-    line-height: 1.45;
-    padding-left: 0.9rem;
-    position: relative;
-    margin-bottom: 0.1rem;
-  }
-  .job-bullets li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.45em;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #bbb;
-  }
-
-  /* RESPONSIVE */
+  .job-title { font-size: 0.88rem; font-weight: 600; color: #1a1a2e; }
+  .job-dates { font-size: 0.75rem; color: #7f8fa6; text-align: right; align-self: center; white-space: nowrap; }
+  .job-company { font-size: 0.75rem; color: #636e72; grid-column: 1 / -1; }
+  .job-bullets { grid-column: 1 / -1; list-style: none; margin-top: 0.3rem; }
+  .job-bullets li { font-size: 0.8rem; color: #4a4a5a; line-height: 1.5; padding-left: 1rem; position: relative; margin-bottom: 0.15rem; }
+  .job-bullets li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 4px; height: 4px; border-radius: 50%; background: #bbb; }
   @media (max-width: 768px) {
-    .resume {
-      grid-template-columns: 1fr;
-      height: auto;
-      min-height: 100vh;
-    }
-    body { overflow: auto; }
-    .sidebar { padding: 1.5rem; gap: 1rem; }
-    .main { padding: 1.5rem; }
+    .resume { grid-template-columns: 1fr; }
+    .sidebar { padding: 2rem 1.5rem; gap: 1.2rem; }
+    .name-block h1 { font-size: 1.6rem; }
+    .main { padding: 2rem 1.5rem; gap: 1.2rem; }
+    .job { grid-template-columns: 1fr; }
+    .job-dates { text-align: left; font-size: 0.7rem; margin-top: -0.1rem; }
+    .job-title { font-size: 0.9rem; }
+    .job-bullets li { font-size: 0.8rem; }
+    .summary { font-size: 0.82rem; }
   }
-
-  @media print {
-    body { overflow: visible; }
-    .resume { box-shadow: none; height: auto; }
-  }
+  @media print { .resume { box-shadow: none; } .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 </style>
 </head>
 <body>
-
 <div class="resume">
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div>
+    <div class="name-block">
       <h1>Daniel<br>Melese-d'Hospital</h1>
       <p class="subtitle">Marketing &amp; Sales Professional</p>
     </div>
-
     <ul class="contact-list">
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Carlsbad, CA 92009</span>
-      </li>
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:rokitmok5@gmail.com">rokitmok5@gmail.com</a>
-      </li>
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <a href="tel:+17606889954">(760) 688-9954</a>
-      </li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Carlsbad, CA 92009</span></li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:rokitmok5@gmail.com">rokitmok5@gmail.com</a></li>
+      <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+17606889954">(760) 688-9954</a></li>
     </ul>
-
-    <div class="sidebar-section">
-      <h3>Education</h3>
-      <div class="education-block">
-        <div class="school">Cal State San Marcos</div>
-        <div class="degree">B.S. Applied Physics</div>
-        <div class="dates">2013 &ndash; 2019</div>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <h3>Skills</h3>
-      <div class="skill-group">
-        <div class="skill-group-label">Technical</div>
-        <div class="skill-tags">
-          <span class="skill-tag">MS Office</span>
-          <span class="skill-tag">Google Workspace</span>
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">Data Analysis</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">Customer Service</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Client Relations</span>
-          <span class="skill-tag">Upselling</span>
-          <span class="skill-tag">Conflict Resolution</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">Operations</div>
-        <div class="skill-tags">
-          <span class="skill-tag">POS Systems</span>
-          <span class="skill-tag">Inventory Mgmt</span>
-          <span class="skill-tag">Cash Handling</span>
-          <span class="skill-tag">Food Safety</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">Analytical</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Quantitative Analysis</span>
-          <span class="skill-tag">Problem-Solving</span>
-        </div>
-      </div>
+    <div class="sidebar-section"><h3>Education</h3><div class="education-block"><div class="school">Cal State San Marcos</div><div class="degree">B.S. Applied Physics</div><div class="dates">2013 – 2019</div></div></div>
+    <div class="sidebar-section"><h3>Skills</h3>
+      <div class="skill-group"><div class="skill-group-label">Technical</div><div class="skill-tags"><span class="skill-tag">MS Office</span><span class="skill-tag">Google Workspace</span><span class="skill-tag">MATLAB</span><span class="skill-tag">C/C++</span><span class="skill-tag">Data Analysis</span><span class="skill-tag">AI Tools (ChatGPT, Claude)</span></div></div>
+      <div class="skill-group"><div class="skill-group-label">Customer Service</div><div class="skill-tags"><span class="skill-tag">Client Relations</span><span class="skill-tag">Upselling</span><span class="skill-tag">Conflict Resolution</span></div></div>
+      <div class="skill-group"><div class="skill-group-label">Operations</div><div class="skill-tags"><span class="skill-tag">POS Systems</span><span class="skill-tag">Inventory Mgmt</span><span class="skill-tag">Cash Handling</span><span class="skill-tag">Food Safety</span></div></div>
+      <div class="skill-group"><div class="skill-group-label">Analytical</div><div class="skill-tags"><span class="skill-tag">Quantitative Analysis</span><span class="skill-tag">Problem-Solving</span></div></div>
     </div>
   </aside>
-
-  <!-- MAIN CONTENT -->
   <main class="main">
-    <p class="summary">
-      Customer-focused professional with 5+ years of experience in hospitality, sales, and client relations.
-      Bachelor's degree in Applied Physics with strong analytical, data analysis, and technical skills.
-      Proven track record of delivering exceptional customer experiences and maintaining high satisfaction ratings.
-      Seeking to leverage communication skills, attention to detail, and analytical background in a marketing, sales, or office-based role.
-    </p>
-
+    <p class="summary">Customer-focused professional with 5+ years of experience in hospitality, sales, and client relations. Bachelor’s degree in Applied Physics with strong analytical, data analysis, and technical skills. Proven track record of delivering exceptional customer experiences and maintaining high satisfaction ratings. Seeking to leverage communication skills, attention to detail, and analytical background in a marketing, sales, or office-based role.</p>
     <h2 class="section-title">Experience</h2>
-
     <div class="jobs">
-      <div class="job">
-        <div class="job-title">Beertender</div>
-        <div class="job-dates">Sep 2021 &ndash; Present</div>
-        <div class="job-company">Karl Strauss Brewing Company &mdash; Carlsbad, CA</div>
-        <ul class="job-bullets">
-          <li>Serve as primary point of contact for bar and restaurant guests, managing orders with speed and accuracy</li>
-          <li>Provide detailed product knowledge on craft beer selections, enhancing the customer experience</li>
-          <li>Process transactions and handle cash/credit payments in a high-volume environment</li>
-          <li>Build rapport with repeat customers, contributing to customer retention and positive reviews</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-title">Finished Beer Specialist</div>
-        <div class="job-dates">Mar &ndash; Sep 2021</div>
-        <div class="job-company">BJ's Restaurant &amp; Brewhouse &mdash; Carlsbad, CA</div>
-        <ul class="job-bullets">
-          <li>Maintained beer line quality and sanitation standards across tap systems</li>
-          <li>Managed inventory of wines, canned beers, and keg stock in the cellar</li>
-          <li>Ensured proper rotation and availability of beverage products for front-of-house</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-title">Assistant Server</div>
-        <div class="job-dates">2019 &ndash; 2021</div>
-        <div class="job-company">BJ's Brewhouse and Restaurant &mdash; Carlsbad, CA</div>
-        <ul class="job-bullets">
-          <li>Delivered food and cocktail service in a fast-paced, high-volume restaurant environment</li>
-          <li>Communicated menu details, beer pairings, and specials to guests with clarity and enthusiasm</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-title">Food Delivery Driver</div>
-        <div class="job-dates">2018 &ndash; 2021</div>
-        <div class="job-company">DoorDash</div>
-        <ul class="job-bullets">
-          <li>Completed 500+ deliveries with a 4.95/5.0 customer satisfaction rating</li>
-          <li>Named Top Dasher for 4 consecutive months based on performance metrics</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-title">Cashier / Host / Server</div>
-        <div class="job-dates">2019 &ndash; 2020</div>
-        <div class="job-company">Buffalo Wild Wings</div>
-        <ul class="job-bullets">
-          <li>Handled cash and credit transactions; assembled and delivered takeout orders</li>
-          <li>Operated ALOHA POS system for order entry and payment processing</li>
-        </ul>
-      </div>
+      <div class="job"><div class="job-title">Beverage Sales &amp; Service Associate</div><div class="job-dates">Sep 2021 – Present</div><div class="job-company">Karl Strauss Brewing Company — Carlsbad, CA</div><ul class="job-bullets"><li>Serve as primary point of contact for bar and restaurant guests, managing orders with speed and accuracy</li><li>Provide detailed product knowledge on craft beer selections, enhancing the customer experience</li><li>Process transactions and handle cash/credit payments in a high-volume environment</li><li>Build rapport with repeat customers, contributing to customer retention and positive reviews</li></ul></div>
+      <div class="job"><div class="job-title">Inventory &amp; Quality Control Associate</div><div class="job-dates">Mar – Sep 2021</div><div class="job-company">BJ’s Restaurant &amp; Brewhouse — Carlsbad, CA</div><ul class="job-bullets"><li>Maintained beer line quality and sanitation standards across tap systems</li><li>Managed inventory of wines, canned beers, and keg stock in the cellar</li><li>Ensured proper rotation and availability of beverage products for front-of-house</li></ul></div>
+      <div class="job"><div class="job-title">Assistant Server</div><div class="job-dates">2019 – 2021</div><div class="job-company">BJ’s Brewhouse and Restaurant — Carlsbad, CA</div><ul class="job-bullets"><li>Delivered food and cocktail service in a fast-paced, high-volume restaurant environment</li><li>Communicated menu details, beer pairings, and specials to guests with clarity and enthusiasm</li></ul></div>
+      <div class="job"><div class="job-title">Food Delivery Driver</div><div class="job-dates">2018 – 2021</div><div class="job-company">DoorDash</div><ul class="job-bullets"><li>Completed 500+ deliveries with a 4.95/5.0 customer satisfaction rating</li><li>Named Top Dasher for 4 consecutive months based on performance metrics</li></ul></div>
+      <div class="job"><div class="job-title">Cashier / Host / Server</div><div class="job-dates">2019 – 2020</div><div class="job-company">Buffalo Wild Wings</div><ul class="job-bullets"><li>Handled cash and credit transactions; assembled and delivered takeout orders</li><li>Operated ALOHA POS system for order entry and payment processing</li></ul></div>
     </div>
   </main>
 </div>
-
 </body>
 </html>
